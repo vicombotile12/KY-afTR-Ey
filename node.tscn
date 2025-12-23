@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=4 uid="uid://bhqfr3kfku6ba"]
+
+[ext_resource type="TileSet" uid="uid://bfsr34hou8sp7" path="res://new_tile_set.tres" id="1_sy5k4"]
+
+[node name="Node" type="Node"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAAAAAAABAAMAAAAAAAAAAAADAAAAAAABAAAAAAAEAAAAAAACAAEAAAAGAAEAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAA=")
+tile_set = ExtResource("1_sy5k4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
