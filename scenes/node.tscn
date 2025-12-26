@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=4 uid="uid://dvlfj7jhup4p1"]
+
+[ext_resource type="TileSet" uid="uid://c41krhldpwqci" path="res://resources/new_tile_set.tres" id="1_76phl"]
+[ext_resource type="PackedScene" uid="uid://b4mt1w46fhi3k" path="res://scenes/chesty.tscn" id="2_dondh"]
+[ext_resource type="Texture2D" uid="uid://psibbdde0p10" path="res://sprites/icon.svg" id="4_6qyud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bss38"]
+size = Vector2(16, 16)
+
+[node name="test1" type="Node"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(2, 217)
+scale = Vector2(3.4806, 3.39337)
+tile_map_data = PackedByteArray("AAACAAAAAAAGAAMAAAAAAAAAAAAGAAMAAAABAAAAAAAGAAMAAAACAAEAAAAGAAEAAAADAAAAAAAGAAMAAAAEAAAAAAAGAAMAAAD//wAAAAAGAAMAAAD/////AAAGAAMAAAD///7/AAAGAAMAAAD///3/AAAGAAMAAAD///z/AAAGAAMAAAAAAPz/AAAGAAMAAAABAPz/AAAGAAMAAAACAPz/AAAGAAMAAAADAPz/AAAGAAMAAAAEAPz/AAAGAAMAAAAFAPz/AAAGAAMAAAAFAP3/AAAGAAMAAAAFAP//AAAGAAMAAAAFAAAAAAAGAAMAAAAFAP7/AQAAAAAAAQA=")
+tile_set = ExtResource("1_76phl")
+
+[node name="Chesty" parent="." instance=ExtResource("2_dondh")]
+position = Vector2(38.0001, 126)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(213, 101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_bss38")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.15233, 0.165543)
+texture = ExtResource("4_6qyud")
