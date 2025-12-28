@@ -3,6 +3,7 @@ extends CharacterBody2D
 const accel_grav = 980
 const v_gravs = [Vector2(0,1), Vector2(1,0), Vector2(0,-1), Vector2(-1,0)]
 @export var v_grav = v_gravs[0]
+@export var fly = false
 var gravity = accel_grav * v_grav
 
 # Called when the node enters the scene tree for the first time.
