@@ -3,11 +3,15 @@ extends Node
 var Activated =  false
 var level = 0
 var once = false
+
 var nextlevel
+var tranplayer 
+var tranrect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	tranrect = $Control/ColorRect
+	tranplayer = $Control/ColorRect/AnimationPlayer
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,3 +33,9 @@ func _change_room() -> void:
 	add_child(next_levl)
 	level += 1
 	once = false
+	tranrect.visible = true
+	tranplayer.play()
+
+
+func _on_tranplayer_animation_finished(anim_name: StringName) -> void:
+	tranrect.visible = false

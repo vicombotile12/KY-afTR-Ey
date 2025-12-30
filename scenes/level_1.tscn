@@ -17,5 +17,3 @@ fly = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(226, 217)
 zoom = Vector2(1.5, 1.5)
-
-[connection signal="body_entered" from="objects/nextlevel" to="objects/nextlevel" method="_on_body_entered"]

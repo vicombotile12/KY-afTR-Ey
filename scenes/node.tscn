@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvlfj7jhup4p1"]
+[gd_scene load_steps=4 format=3 uid="uid://dvlfj7jhup4p1"]
 
 [ext_resource type="Script" uid="uid://8a7vdrnrnr15" path="res://scripts/roomchanger!.gd" id="1_qhfa5"]
 [ext_resource type="PackedScene" uid="uid://25rt2ooyljys" path="res://scenes/level_0.tscn" id="2_ignic"]
+[ext_resource type="PackedScene" uid="uid://bprndn77b60xx" path="res://scenes/animation.tscn" id="3_dondh"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_qhfa5")
 
 [node name="level0" parent="." instance=ExtResource("2_ignic")]
+
+[node name="Control" parent="." instance=ExtResource("3_dondh")]
+z_index = 2
+offset_left = -298.0
+offset_top = -119.0
+offset_right = -298.0
+offset_bottom = -119.0
+
+[node name="ColorRect" parent="Control" index="0"]
+visible = false
+
+[connection signal="animation_finished" from="Control/ColorRect/AnimationPlayer" to="." method="_on_tranplayer_animation_finished"]
+
+[editable path="Control"]
