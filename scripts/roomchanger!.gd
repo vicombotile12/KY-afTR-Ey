@@ -28,13 +28,16 @@ func _process(delta: float) -> void:
 
 func _change_room() -> void:
 	var next_levl = load("res://scenes/level_%s.tscn" % str(level + 1))
-	get_child(0).queue_free()
+	print("res://scenes/level_%s.tscn" % str(level + 1))
+	get_node("level%s" % str(level)).queue_free()
+	print(level)
+	print(next_levl)
 	next_levl = next_levl.instantiate()
 	add_child(next_levl)
 	level += 1
 	once = false
 	tranrect.visible = true
-	tranplayer.play()
+	tranplayer.play("change")
 
 
 func _on_tranplayer_animation_finished(anim_name: StringName) -> void:

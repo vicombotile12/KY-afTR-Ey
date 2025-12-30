@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://6reyl70wp5t"]
+
+[ext_resource type="Texture2D" uid="uid://ddm7kyorpon4l" path="res://sprites/codespike.png" id="1_lb07m"]
+[ext_resource type="Texture2D" uid="uid://dobmb551sptac" path="res://resources/10011100.tres" id="2_ag8y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cargm"]
+size = Vector2(5, 10)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qk7ke"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(0.8, 0.8, 0.5)
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.7
+
+[node name="codespike" type="Node2D"]
+
+[node name="codespike" type="Area2D" parent="."]
+position = Vector2(-8, -8)
+
+[node name="Codespike" type="Sprite2D" parent="codespike"]
+position = Vector2(8, 8)
+texture = ExtResource("1_lb07m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="codespike"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_cargm")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="codespike"]
+z_index = 1
+position = Vector2(7, 9)
+scale = Vector2(6.58897, 6.58897)
+amount = 12
+texture = ExtResource("2_ag8y1")
+lifetime = 0.87
+process_material = SubResource("ParticleProcessMaterial_qk7ke")
