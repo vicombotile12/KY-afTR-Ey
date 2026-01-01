@@ -47,4 +47,23 @@ func connect_changer():
 	nextlevel.change_room.connect(_change_room)
 
 func kill_process():
+	var player = get_node("level%s/Chesty" % level)
+	player.velocity *= -1
+	player.collision_layer = 2
+	player.collision_mask = 2
 	
+	var glitch_packed = preload("res://scenes/GLITCH.tscn")
+	var glitch = glitch_packed.instantiate()
+	player.add_child(glitch)
+	
+	$Timer.start()
+
+func _on_timer_timeout() -> void:
+	tranrect.visible = true
+	tranplayer.play("change")
+	var player = get_node("level%s/Chesty" % level)
+	player.position = player.spawn_pos
+	
+	player.collision_layer = 1
+	player.collision_mask = 1
+	player.get_node("GPUParticles2D").queue_free()

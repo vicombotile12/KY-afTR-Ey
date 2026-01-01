@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c4q24tpnkrapf"]
+
+[node name="level4" type="Node"]
+
+[node name="objects" type="TileMapLayer" parent="."]
+
+[node name="bg" type="TileMapLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

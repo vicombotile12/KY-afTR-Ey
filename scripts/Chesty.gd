@@ -6,13 +6,12 @@ const v_gravs = [Vector2(0,1), Vector2(1,0), Vector2(0,-1), Vector2(-1,0)]
 @export var fly = false
 var gravity = accel_grav * v_grav
 
+var spawn_pos
 enum Harm {INSTANT, DELAYED, TICK_SLOW, TICK_FAST}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var objects = get_node("../objects").get_children()
-	var spikes: Array[Node] 
-	print(spikes)
+	spawn_pos = position
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float)-> void:

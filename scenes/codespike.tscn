@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://6reyl70wp5t"]
+[gd_scene load_steps=4 format=3 uid="uid://6reyl70wp5t"]
 
 [ext_resource type="Script" uid="uid://byrju758ry25y" path="res://scripts/codespike.gd" id="1_ag8y1"]
 [ext_resource type="Texture2D" uid="uid://ddm7kyorpon4l" path="res://sprites/codespike.png" id="1_lb07m"]
-[ext_resource type="PackedScene" uid="uid://cax2q8ctgvr5k" path="res://scenes/GLITCH.tscn" id="3_ag8y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cargm"]
 size = Vector2(5, 10)
@@ -20,8 +19,5 @@ texture = ExtResource("1_lb07m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="codespike"]
 position = Vector2(8, 10)
 shape = SubResource("RectangleShape2D_cargm")
-
-[node name="GPUParticles2D" parent="codespike" instance=ExtResource("3_ag8y1")]
-position = Vector2(7, 9)
 
 [connection signal="body_entered" from="codespike" to="codespike" method="_on_body_entered"]
