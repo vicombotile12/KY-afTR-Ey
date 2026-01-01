@@ -15,3 +15,8 @@ texture = ExtResource("2_r1bip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bss38")
+
+[node name="decayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="decayTimer" to="." method="_on_timer_timeout"]

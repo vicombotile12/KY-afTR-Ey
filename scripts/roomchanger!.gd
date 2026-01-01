@@ -18,13 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if !once:
 		once = !once
-		var access_string = "level%s/objects" % str(level)
-		print(access_string)
-		nextlevel = get_node(access_string)
-		print(nextlevel)
-		nextlevel = nextlevel.get_child(0)
-		print(nextlevel)
-		nextlevel.change_room.connect(_change_room)
+		connect_changer()
 
 func _change_room() -> void:
 	var next_levl = load("res://scenes/level_%s.tscn" % str(level + 1))
@@ -42,3 +36,15 @@ func _change_room() -> void:
 
 func _on_tranplayer_animation_finished(anim_name: StringName) -> void:
 	tranrect.visible = false
+
+func connect_changer():
+	var access_string = "level%s/objects" % str(level)
+	print(access_string)
+	nextlevel = get_node(access_string)
+	print(nextlevel)
+	nextlevel = nextlevel.get_child(0)
+	print(nextlevel)
+	nextlevel.change_room.connect(_change_room)
+
+func kill_process():
+	

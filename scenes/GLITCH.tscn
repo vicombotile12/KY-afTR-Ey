@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cax2q8ctgvr5k"]
+
+[ext_resource type="Texture2D" uid="uid://dobmb551sptac" path="res://resources/10011100.tres" id="1_lnne2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qk7ke"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(0.8, 0.8, 0.5)
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.7
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+z_index = 1
+scale = Vector2(6.58897, 6.58897)
+texture = ExtResource("1_lnne2")
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_qk7ke")

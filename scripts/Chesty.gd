@@ -6,9 +6,13 @@ const v_gravs = [Vector2(0,1), Vector2(1,0), Vector2(0,-1), Vector2(-1,0)]
 @export var fly = false
 var gravity = accel_grav * v_grav
 
+enum Harm {INSTANT, DELAYED, TICK_SLOW, TICK_FAST}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	var objects = get_node("../objects").get_children()
+	var spikes: Array[Node] 
+	print(spikes)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float)-> void:
@@ -32,3 +36,6 @@ func _physics_process(delta: float)-> void:
 	velocity = (gravity * delta + velocity) /1.025 # <- that was to help with straightness of velocity relative to gravity
 	move_and_slide()
 	# got it to work :]
+
+func harm(type: int):
+	pass
