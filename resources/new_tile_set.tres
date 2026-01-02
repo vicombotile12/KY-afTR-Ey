@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c41krhldpwqci"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://c41krhldpwqci"]
 
 [ext_resource type="Texture2D" uid="uid://b0a6000h54b7u" path="res://sprites/pixil-frame-0(55).png" id="1_37tc5"]
 [ext_resource type="PackedScene" uid="uid://4qbx8c8olno8" path="res://scenes/nextlevel.tscn" id="2_55evk"]
 [ext_resource type="PackedScene" uid="uid://6reyl70wp5t" path="res://scenes/codespike.tscn" id="3_55evk"]
+[ext_resource type="PackedScene" uid="uid://cwr2r23ndiekv" path="res://scenes/downspike.tscn" id="4_3q30e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujgj0"]
 texture = ExtResource("1_37tc5")
@@ -398,6 +399,7 @@ texture = ExtResource("1_37tc5")
 resource_name = "interactables"
 scenes/1/scene = ExtResource("2_55evk")
 scenes/2/scene = ExtResource("3_55evk")
+scenes/3/scene = ExtResource("4_3q30e")
 
 [resource]
 physics_layer_0/collision_layer = 1
