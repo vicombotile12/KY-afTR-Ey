@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwr2r23ndiekv"]
+[gd_scene load_steps=4 format=3 uid="uid://r2y8j6d5nwgp"]
 
 [ext_resource type="Script" uid="uid://byrju758ry25y" path="res://scripts/codespike.gd" id="1_xfm8r"]
 [ext_resource type="Texture2D" uid="uid://ddm7kyorpon4l" path="res://sprites/codespike.png" id="2_l2rgb"]
