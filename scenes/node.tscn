@@ -11,13 +11,17 @@ script = ExtResource("1_qhfa5")
 
 [node name="Control" parent="." instance=ExtResource("3_dondh")]
 z_index = 2
-offset_left = -298.0
-offset_top = -119.0
-offset_right = -298.0
-offset_bottom = -119.0
+offset_left = -1588.0
+offset_top = -657.0
+offset_right = 2143.0
+offset_bottom = 1642.0
 
 [node name="ColorRect" parent="Control" index="0"]
 visible = false
+offset_left = -3576.0
+offset_top = -2336.0
+offset_right = 7230.0
+offset_bottom = 5065.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
