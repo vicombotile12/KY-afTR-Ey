@@ -1,7 +1,7 @@
 extends Node
 
 var Activated =  false
-var level = 0
+var level = -1
 var once = false
 
 var nextlevel
