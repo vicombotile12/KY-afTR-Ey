@@ -18,6 +18,8 @@ config/icon="uid://bfuefan15yf7i"
 [global_group]
 
 sign="[sign]"
+player="The player."
+root="Main scene root."
 
 [input]
 

@@ -1,3 +1,4 @@
+class_name Chesty
 extends CharacterBody2D
 
 const accel_grav = 980
