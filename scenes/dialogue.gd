@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not $PanelContainer/Label.text:
 		get_parent().queue_free()
-	elif $PanelContainer/Label.text.slice(0,3) == "New":
+	elif $PanelContainer/Label.text.begins_with("NEW"):
 		$PanelContainer/Label.normal_font_size = 32
 
 func down():
