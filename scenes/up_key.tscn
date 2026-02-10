@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfmo0mvtivdi0"]
+[gd_scene format=3 uid="uid://cfmo0mvtivdi0"]
 
 [ext_resource type="Script" uid="uid://tbykqy3jut30" path="res://scripts/up_key.gd" id="1_kjygs"]
 [ext_resource type="Texture2D" uid="uid://cao0twqrilv5h" path="res://sprites/the_key_in_question.png" id="2_8qkao"]
@@ -7,16 +7,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50amm"]
 size = Vector2(16, 16)
 
-[node name="AreaKey" type="Area2D"]
+[node name="UpKey" type="Area2D" unique_id=521568783]
 script = ExtResource("1_kjygs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551168353]
 texture = ExtResource("2_8qkao")
 
-[node name="Up" type="Sprite2D" parent="Sprite2D"]
+[node name="Up" type="Sprite2D" parent="Sprite2D" unique_id=968240298]
 texture = ExtResource("3_g18c0")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304737729]
 shape = SubResource("RectangleShape2D_50amm")

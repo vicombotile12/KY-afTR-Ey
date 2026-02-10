@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyf2ghx8nvlc1"]
+
+[ext_resource type="Script" uid="uid://dgx7b88jlyhe5" path="res://scenes/down_key.gd" id="1_w01fx"]
+[ext_resource type="Texture2D" uid="uid://cao0twqrilv5h" path="res://sprites/the_key_in_question.png" id="2_lhhkp"]
+[ext_resource type="Texture2D" uid="uid://cudbewlp4bexx" path="res://sprites/arrows.png" id="3_h6glx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50amm"]
+size = Vector2(16, 16)
+
+[node name="DownKey" type="Area2D" unique_id=521568783]
+script = ExtResource("1_w01fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551168353]
+texture = ExtResource("2_lhhkp")
+
+[node name="Down" type="Sprite2D" parent="Sprite2D" unique_id=968240298]
+texture = ExtResource("3_h6glx")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304737729]
+shape = SubResource("RectangleShape2D_50amm")

@@ -8,6 +8,8 @@ var nextlevel
 var tranplayer 
 var tranrect
 
+var keystate: Array[String]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tranrect = $Control/ColorRect
@@ -67,3 +69,7 @@ func _on_timer_timeout() -> void:
 	player.collision_layer = 1
 	player.collision_mask = 1
 	player.get_node("GPUParticles2D").queue_free()
+
+func new_key(newkey):
+	var player = get_node("level%s/Chesty" % level)
+	player.keys_availability[newkey] = true

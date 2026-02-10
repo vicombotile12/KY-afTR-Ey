@@ -7,6 +7,13 @@ const v_gravs = [Vector2(0,1), Vector2(1,0), Vector2(0,-1), Vector2(-1,0)]
 @export var fly = false
 var gravity = accel_grav * v_grav
 
+var keys_availability: Dictionary = {
+	"Up": false,
+	"Down": false,
+	"Torch": false,
+	"Kill": false,
+	}
+
 var spawn_pos
 enum Harm {INSTANT, DELAYED, TICK_SLOW, TICK_FAST}
 
@@ -27,6 +34,13 @@ func _physics_process(delta: float)-> void:
 				Vector2.LEFT: v_grav = v_gravs[0]; up_direction = Vector2.UP
 			gravity = v_grav * accel_grav
 			$Sprite2D.rotation_degrees += -90
+	
+	if keys_availability["Up"] and Input.is_action_pressed("up"):
+		collision_mask = 2
+	elif keys_availability["Down"] and Input.is_action_pressed("down"):
+		collision_mask = 3
+	else: 
+		collision_mask = 1
 	
 	if is_on_wall() and (gravity.y > 0.65 or gravity.x > 0.65):
 		gravity -= 0.03 * v_grav * accel_grav #wall friction

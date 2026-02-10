@@ -34,7 +34,7 @@ scale = Vector2(3.12067, 3.12067)
 [node name="sign2" parent="." unique_id=1322721385 instance=ExtResource("2_mevca")]
 position = Vector2(417, 26)
 scale = Vector2(2, 2)
-text = "The Shell Emulator allows for a pathway between the physical and the digital. It is meant to fix hardware issues when using softeare to do so would be more optimal."
+text = "The Shell Emulator allows for a pathway between the physical and the digital. It is meant to fix hardware issues when using software to do so would be more optimal."
 
 [node name="Untitled" type="AudioStreamPlayer2D" parent="." unique_id=785455300]
 position = Vector2(542, 247)

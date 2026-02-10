@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvlfj7jhup4p1"]
+[gd_scene format=3 uid="uid://dvlfj7jhup4p1"]
 
 [ext_resource type="Script" uid="uid://8a7vdrnrnr15" path="res://scripts/roomchanger!.gd" id="1_qhfa5"]
 [ext_resource type="PackedScene" uid="uid://cbxp6ckp3g1g1" path="res://scenes/level_-1.tscn" id="2_dondh"]
 [ext_resource type="PackedScene" uid="uid://bprndn77b60xx" path="res://scenes/animation.tscn" id="3_dondh"]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" unique_id=1262399771 groups=["root"]]
 script = ExtResource("1_qhfa5")
 
-[node name="level-1" parent="." instance=ExtResource("2_dondh")]
+[node name="level-1" parent="." unique_id=984808466 instance=ExtResource("2_dondh")]
 
-[node name="Control" parent="." instance=ExtResource("3_dondh")]
+[node name="Control" parent="." unique_id=445835457 instance=ExtResource("3_dondh")]
 z_index = 2
 offset_left = -1588.0
 offset_top = -657.0
@@ -23,7 +23,7 @@ offset_top = -2336.0
 offset_right = 7230.0
 offset_bottom = 5065.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1308348403]
 wait_time = 1.5
 one_shot = true
 

@@ -15,7 +15,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Chesty:
 		var root = get_tree().get_nodes_in_group("root")[0]
-		root.keystate.append(key)
-		root.new_key()
+		root.new_key(key)
 		
 		queue_free()
