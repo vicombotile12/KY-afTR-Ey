@@ -8,7 +8,22 @@ var nextlevel
 var tranplayer 
 var tranrect
 
-var keystate: Array[String]
+var ost_A = preload("res://resources/untitled.wav")
+var ost_B = preload("res://resources/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.wav")
+var ost_C = preload("res://resources/5-8 A Little Floccinaucinihilipilification.wav")
+var ost_D
+
+var keystate: Array[String] = []
+var music_levels: Dictionary = {
+	-1: ost_A,
+	0: ost_B,
+	1: ost_B,
+	2: ost_B,
+	3: ost_B,
+	4: ost_B,
+	5: ost_C,
+	6: ost_C,
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +47,18 @@ func _change_room() -> void:
 	add_child(next_levl)
 	level += 1
 	once = false
+	
 	tranrect.visible = true
 	tranplayer.play("change")
+	
+	var current_music = music_levels[level]
+	if !$AudioStreamPlayer.playing or $AudioStreamPlayer.stream != music_levels[level]:
+		$AudioStreamPlayer.stream = current_music
+		$AudioStreamPlayer.play()
+	
+	if keystate: for key in keystate:
+		var player = get_node("level%s/Chesty" % level)
+		player.keys_availability[key] = true
 
 
 func _on_tranplayer_animation_finished(anim_name: StringName) -> void:
@@ -73,3 +98,4 @@ func _on_timer_timeout() -> void:
 func new_key(newkey):
 	var player = get_node("level%s/Chesty" % level)
 	player.keys_availability[newkey] = true
+	keystate.append(newkey)

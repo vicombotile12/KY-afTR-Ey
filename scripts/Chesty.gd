@@ -37,10 +37,14 @@ func _physics_process(delta: float)-> void:
 	
 	if keys_availability["Up"] and Input.is_action_pressed("up"):
 		collision_mask = 2
+		get_tree().get_first_node_in_group("objects").self_modulate = Color(self_modulate, 0.5)
+		get_tree().get_first_node_in_group("uplayer").self_modulate = Color(self_modulate, 1)
 	elif keys_availability["Down"] and Input.is_action_pressed("down"):
 		collision_mask = 3
 	else: 
 		collision_mask = 1
+		get_tree().get_first_node_in_group("objects").self_modulate = Color(self_modulate, 1)
+		if get_tree().get_first_node_in_group("uplayer"): get_tree().get_first_node_in_group("uplayer").self_modulate = Color(self_modulate, 0.5)
 	
 	if is_on_wall() and (gravity.y > 0.65 or gravity.x > 0.65):
 		gravity -= 0.03 * v_grav * accel_grav #wall friction
