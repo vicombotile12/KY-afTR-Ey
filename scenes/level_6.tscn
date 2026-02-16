@@ -36,4 +36,4 @@ fly = true
 position = Vector2(141.00002, -39)
 scale = Vector2(3.0291207, 3.6112673)
 
-[connection signal="body_entered" from="objects/@Area2D@36765" to="objects/@Area2D@36765" method="_on_body_entered"]
+[connection signal="body_entered" from="objects/nextlevel" to="objects/nextlevel" method="_on_body_entered"]

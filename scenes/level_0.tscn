@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://25rt2ooyljys"]
+[gd_scene format=4 uid="uid://25rt2ooyljys"]
 
 [ext_resource type="TileSet" uid="uid://c41krhldpwqci" path="res://resources/new_tile_set.tres" id="1_rerym"]
 [ext_resource type="PackedScene" uid="uid://b4mt1w46fhi3k" path="res://scenes/chesty.tscn" id="2_uijja"]
@@ -7,28 +7,30 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bss38"]
 size = Vector2(16, 16)
 
-[node name="level0" type="Node"]
+[node name="level0" type="Node" unique_id=1812334348]
 
-[node name="objects" type="TileMapLayer" parent="."]
+[node name="objects" type="TileMapLayer" parent="." unique_id=1479524562 groups=["objects"]]
 position = Vector2(3, 217)
 scale = Vector2(3.4806, 3.39337)
 tile_map_data = PackedByteArray("AAACAAAAAAAGAAMAAAAAAAAAAAAGAAMAAAABAAAAAAAGAAMAAAACAAEAAAAGAAEAAAADAAAAAAAGAAMAAAAEAAAAAAAGAAMAAAD//wAAAAAGAAMAAAD/////AAAGAAMAAAD///7/AAAGAAMAAAD///3/AAAGAAMAAAD///z/AAAGAAMAAAAAAPz/AAAGAAMAAAABAPz/AAAGAAMAAAACAPz/AAAGAAMAAAADAPz/AAAGAAMAAAAEAPz/AAAGAAMAAAAFAPz/AAAGAAMAAAAFAP3/AAAGAAIAAAAFAP//AAAGAAAAAAAFAAAAAAAGAAMAAAAFAP7/AQAAAAAAAQAEAP//AAAGAAUAAAADAP//AAAGAAUAAAAEAP7/AAAGAAUAAAADAP7/AAAGAAUAAAACAP//AAAGAAUAAAACAP7/AAAGAAUAAAABAP//AAAGAAUAAAAAAP//AAAGAAUAAAABAP7/AAAGAAUAAAAAAP7/AAAGAAUAAAAAAP3/AAAGAAUAAAABAP3/AAAGAAUAAAACAP3/AAAGAAUAAAADAP3/AAAGAAUAAAAEAP3/AAAGAAUAAAA=")
 tile_set = ExtResource("1_rerym")
 
-[node name="Chesty" parent="." instance=ExtResource("2_uijja")]
+[node name="Chesty" parent="." unique_id=1923286813 instance=ExtResource("2_uijja")]
 position = Vector2(38.0001, 126)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1519581649]
 position = Vector2(213, 101)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1898219673]
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_bss38")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=720195443]
 scale = Vector2(0.15233, 0.165543)
 texture = ExtResource("3_5nv5w")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=779268239]
 position = Vector2(140, 134)
 zoom = Vector2(3, 3)
+
+[connection signal="body_entered" from="objects/nextlevel" to="objects/nextlevel" method="_on_body_entered"]
