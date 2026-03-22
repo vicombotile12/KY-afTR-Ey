@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://4qbx8c8olno8"]
+[gd_scene format=3 uid="uid://4qbx8c8olno8"]
 
 [ext_resource type="Texture2D" uid="uid://b4jidpo13ywdw" path="res://sprites/Next.png" id="1_2cglo"]
 [ext_resource type="Script" uid="uid://s0f7lp0skr6k" path="res://scripts/nextlevel.gd" id="1_lewo4"]
@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lewo4"]
 size = Vector2(16, 16)
 
-[node name="nextlevel" type="Area2D"]
+[node name="nextlevel" type="Area2D" unique_id=1988532311 groups=["nextlevel"]]
 script = ExtResource("1_lewo4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435221717]
 shape = SubResource("RectangleShape2D_lewo4")
 
-[node name="Next" type="Sprite2D" parent="."]
+[node name="Next" type="Sprite2D" parent="." unique_id=1794232474]
 position = Vector2(-6, -1.49012e-08)
 rotation = -1.55743
 scale = Vector2(0.257271, 0.204377)

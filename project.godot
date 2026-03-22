@@ -26,6 +26,7 @@ player="The player."
 root="Main scene root."
 objects=""
 uplayer=""
+nextlevel=""
 
 [input]
 
@@ -67,5 +68,3 @@ kill={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

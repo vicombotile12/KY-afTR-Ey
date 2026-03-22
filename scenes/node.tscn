@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dvlfj7jhup4p1"]
 
 [ext_resource type="Script" uid="uid://8a7vdrnrnr15" path="res://scripts/roomchanger!.gd" id="1_qhfa5"]
-[ext_resource type="PackedScene" uid="uid://cbxp6ckp3g1g1" path="res://scenes/level_-1.tscn" id="2_dondh"]
+[ext_resource type="PackedScene" uid="uid://cw3ftch1gsf2e" path="res://scenes/level_-2.tscn" id="3_76phl"]
 [ext_resource type="PackedScene" uid="uid://bprndn77b60xx" path="res://scenes/animation.tscn" id="3_dondh"]
 
 [node name="Node" type="Node" unique_id=1262399771 groups=["root"]]
 script = ExtResource("1_qhfa5")
-
-[node name="level-1" parent="." unique_id=984808466 instance=ExtResource("2_dondh")]
 
 [node name="Control" parent="." unique_id=445835457 instance=ExtResource("3_dondh")]
 z_index = 2
@@ -28,6 +26,8 @@ wait_time = 1.5
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=344416166]
+
+[node name="objects" parent="." unique_id=464208134 instance=ExtResource("3_76phl")]
 
 [connection signal="animation_finished" from="Control/ColorRect/AnimationPlayer" to="." method="_on_tranplayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

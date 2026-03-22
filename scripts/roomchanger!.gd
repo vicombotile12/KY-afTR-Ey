@@ -1,7 +1,7 @@
 extends Node
 
 var Activated =  false
-var level = -1
+var level = -2
 var once = false
 
 var nextlevel
@@ -15,6 +15,7 @@ var ost_D
 
 var keystate: Array[String] = []
 var music_levels: Dictionary = {
+	-2: null,
 	-1: ost_A,
 	0: ost_B,
 	1: ost_B,
@@ -52,7 +53,7 @@ func _change_room() -> void:
 	tranplayer.play("change")
 	
 	var current_music = music_levels[level]
-	if !$AudioStreamPlayer.playing or $AudioStreamPlayer.stream != music_levels[level]:
+	if (!$AudioStreamPlayer.playing or $AudioStreamPlayer.stream != music_levels[level]) and music_levels[level]:
 		$AudioStreamPlayer.stream = current_music
 		$AudioStreamPlayer.play()
 	
@@ -65,19 +66,28 @@ func _on_tranplayer_animation_finished(anim_name: StringName) -> void:
 	tranrect.visible = false
 
 func connect_changer():
-	var access_string = "level%s/objects" % str(level)
-	print(access_string)
-	nextlevel = get_node(access_string)
-	print(nextlevel)
-	nextlevel = nextlevel.get_child(0)
-	print(nextlevel)
-	nextlevel.change_room.connect(_change_room)
+	#var access_string = "level%s/objects" % str(level)
+	#print(access_string)
+	#nextlevel = get_node(access_string)
+	#print(nextlevel)
+	#nextlevel = nextlevel.get_child(0)
+	#print(nextlevel)
+	var nextlevel = get_tree().get_first_node_in_group("nextlevel")
+	var play = get_tree().get_first_node_in_group("objects").get_node("Play")
+	if nextlevel: 
+		nextlevel.change_room.connect(_change_room)
+	elif play:
+		play.change_room.connect(_change_room)
+	else: 
+		print("no nextlevel")
+		return
 
 func kill_process():
 	var player = get_node("level%s/Chesty" % level)
 	player.velocity *= -1
 	player.collision_layer = 2
 	player.collision_mask = 2
+	player.enabled = false
 	
 	var glitch_packed = preload("res://scenes/GLITCH.tscn")
 	var glitch = glitch_packed.instantiate()
@@ -94,6 +104,7 @@ func _on_timer_timeout() -> void:
 	player.collision_layer = 1
 	player.collision_mask = 1
 	player.get_node("GPUParticles2D").queue_free()
+	player.enabled = true
 
 func new_key(newkey):
 	var player = get_node("level%s/Chesty" % level)
